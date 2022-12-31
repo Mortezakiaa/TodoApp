@@ -1,0 +1,39 @@
+.bg-div{
+    display: flex !important;
+    margin: 0.5rem !important;
+    font-size: 1.5rem !important;
+    color: black !important;
+    justify-content: center!important;
+    align-items: center !important;
+}
+
+.trash{
+    background-color: red !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.complete{
+    background-color: green !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.li{
+    background: white !important;
+    list-style: none !important;
+    flex: 0.6 !important;
+}
+input:focus{
+    box-shadow: none !important;
+    border: none !important;
+}
+
+button:focus{
+    border: none !important;
+}
+
+select:focus{
+    outline: none !important;
+}
+
