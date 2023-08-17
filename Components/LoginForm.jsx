@@ -1,7 +1,6 @@
 
 function LoginForm() {
   return (
-    <>
      <section className="flex flex-col items-center h-screen md:flex-row">
         <div className="hidden w-full h-screen bg-indigo-600 lg:block md:w-1/2 xl:w-2/3">
             <img src="https://source.unsplash.com/random" alt="" className="object-cover w-full h-full"/>
@@ -38,7 +37,6 @@ function LoginForm() {
             </div>
         </div>
      </section> 
-    </>
   )
 }
 

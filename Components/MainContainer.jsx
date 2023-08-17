@@ -4,11 +4,10 @@ import { RxDashboard } from "react-icons/rx";
 import Link from "next/link";
 function MainContainer({children}) {
   return (
-    <>
         <main>
             <div className="flex flex-col md:flex-row">
                 <nav aria-label="alternative nav">
-                    <div className="fixed bottom-0 z-10 content-center w-full h-20 mt-12 bg-gray-800 shadow-xl md:relative md:h-screen md:w-48">
+                    <div className="fixed md:h-[100%] md:min-h-screen bottom-0 z-10 content-center w-full mt-12 bg-gray-800 shadow-xl md:relative md:w-48">
                         <div className="content-center justify-between text-left md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 md:content-start">
                             <ul className="flex flex-row px-1 pt-3 text-center list-reset md:flex-col md:py-3 md:px-2 md:text-left">
                                 <li className="flex-1 mr-3">
@@ -30,14 +29,13 @@ function MainContainer({children}) {
                         </div>
                     </div>
                 </nav>
-                <section className="mt-[37px] w-[100%] h-screen">
-                    <div id="main" className="flex-1 pb-24 mt-12 bg-gray-100 main-content md:mt-2 md:pb-5 h-[100%]">
+                <section className="mt-[37px] w-[100%]">
+                    <div className="flex-1 pb-24 mt-12 bg-gray-100 main-content md:mt-2 md:pb-5 h-[100%]">
                         {children}
                     </div>
                 </section>
             </div>
         </main> 
-    </>
   )
 }
 

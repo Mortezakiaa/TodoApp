@@ -36,7 +36,7 @@ function page() {
     })
   }
   return (
-    <>
+    <div>
         <ToastContainer/>
         <MainHeader headerText={'Add New Todo'}/>
       <div className='px-3 mt-2'>
@@ -49,7 +49,7 @@ function page() {
           <BsAlignStart color="white"/>
         </div>
         <div className="flex items-center justify-between px-2 mt-2 bg-cyan-800 rounded-md w-[200px]">
-          <RadioButton checked={state.status === 'In Progress'} ChangeStatus={e=> ChangeStatus(e)} value={'In Progress'}/>
+          <RadioButton checked={state.status === 'InProgress'} ChangeStatus={e=> ChangeStatus(e)} value={'InProgress'}/>
           <FiSettings color="white"/>
         </div>
         <div className="flex items-center justify-between px-2 mt-2 bg-green-700 rounded-md w-[200px]">
@@ -64,7 +64,7 @@ function page() {
         <button type="button" onClick={SendTodos} className="mt-2 text-white bg-slate-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add Todo</button>
         }
       </div>
-    </>
+    </div>
   )
 }
 

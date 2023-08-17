@@ -1,7 +1,6 @@
 
 function TaskHomePage() {
   return (
-    <>
       <div className="flex flex-wrap justify-center">
             <div className="w-64 p-4 m-4 bg-white rounded-lg shadow-lg">
                 <h2 className="mb-2 text-xl font-bold">Card 1</h2>
@@ -20,7 +19,6 @@ function TaskHomePage() {
                 <p className="text-gray-700">Content for Card 4</p>
             </div>
       </div>
-    </>
   )
 }
 

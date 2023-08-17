@@ -18,8 +18,11 @@ async function Page() {
   return (
     <div>
       <MainHeader headerText={'Todos'}/>
-      <div  className="flex flex-row flex-wrap flex-grow mt-2">
-        <TaskCard/>
+      <div className="flex flex-row flex-wrap flex-grow mt-2">
+        <TaskCard items={'Todo'} data={data.message.Todo} next="InProgress"/>
+        <TaskCard items={'In Progress'} data={data.message.InProgress} next="Review" back="Todo"/>
+        <TaskCard items={'Review'} data={data.message.Review} next="Done" back="InProgress"/>
+        <TaskCard items={'Done'} data={data.message.Done} back="Review"/>
       </div>
     </div>
   )
