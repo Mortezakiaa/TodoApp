@@ -32,7 +32,6 @@ function LoginForm() {
                     Google</span>
                     </div>
                 </button>
-
                 <p className="mt-8">Need an account? <a href="#" className="font-semibold text-blue-500 hover:text-blue-700">Create an account</a></p>
             </div>
         </div>
