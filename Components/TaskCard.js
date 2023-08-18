@@ -1,22 +1,21 @@
 'use client'
 import axios from "axios";
-import { useState } from "react";
 import { BiRightArrow, BiLeftArrow , BiTrashAlt} from "react-icons/bi";
 import {RiTodoLine} from 'react-icons/ri'
-function TaskCard({items , data , next , back}) {
-  const [state , setState] = useState(data)
+import { ToastContainer, toast } from "react-toastify";
+function TaskCard({items , data , next , back , fetchTodos}) {
   const UpdateTodosStatus = (id , status)=>{
     axios.patch(`/api/todo/${id}` , {status}).then((res)=>{
-      setState(res.data)
+      fetchTodos()
     }).catch((err)=>{
-      console.log(err)
+      toast.error(err.response.data.message)
     })
   }
   const RemoveTodos = (id)=>{
     axios.delete(`/api/todo/${id}`).then((res)=>{
-      setState(res.data)
+      fetchTodos()
     }).catch((err)=>{
-      console.log(err)
+      toast.error(err.response.data.message)
     })
   }
   return (
@@ -25,7 +24,7 @@ function TaskCard({items , data , next , back}) {
                 <h2 className="font-bold text-gray-600 uppercase">{items}</h2>
             </div>   
             <div className="flex pt-1 flex-col gap-2 bg-stone-300">
-              {state?.map((item)=>(
+              {data?.map((item)=>(
                 <div className="bg-white p-2 border-transparent rounded-lg shadow-xl" key={item._id}>
                   <div className="flex gap-2 items-center">
                   <RiTodoLine/>
@@ -57,6 +56,7 @@ function TaskCard({items , data , next , back}) {
                 </div> 
               ))}
             </div>
+            <ToastContainer/>
         </div> 
   )
 }

@@ -1,5 +1,6 @@
 import User from "@/Model/UserModel";
 import { ConnectToDb } from "@/utils/ConnectToDb";
+import SortedTodos from "@/utils/SortedTodos";
 import { getServerSession } from "next-auth";
 import { NextResponse} from "next/server";
 
@@ -22,6 +23,18 @@ export async function POST(req){
     } catch (error) {
         return NextResponse.json({error:'Failed' , message:'Error To Connect To DB'} , {status:500})
     }
-   
+}
+
+export async function GET(req){
+    try {
+        await ConnectToDb()
+        const session = await getServerSession(req)
+        if(!session) return NextResponse.json({error:'Failed' , message:'User not Found!!!'} , {status:404})
+        const user = await User.findOne({email:session.user.email})
+        const data = SortedTodos(user.todos)
+        return NextResponse.json({message:data},{status:200})
+    } catch (error) {
+        return NextResponse.json({error:'Failed' , message:'Error To Connect To DB'} , {status:500})
+    }
 }
 
