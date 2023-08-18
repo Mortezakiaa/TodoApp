@@ -19,7 +19,7 @@ function TaskCard({items , data , next , back , fetchTodos}) {
     })
   }
   return (
-        <div className="w-full p-6 md:w-1/2 xl:w-1/4">
+        <div className="w-full p-6 md:w-1/2 xl:w-1/3">
             <div className="p-2 text-gray-800 uppercase border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg bg-gradient-to-b from-gray-300 to-gray-100">
                 <h2 className="font-bold text-gray-600 uppercase">{items}</h2>
             </div>   
@@ -38,13 +38,10 @@ function TaskCard({items , data , next , back , fetchTodos}) {
                             <span>Back</span>
                           </button>:''
                           }
-                          {
-                            !next?
                           <button type="button" onClick={()=> RemoveTodos(item._id)} className="flex items-center p-1 text-sm font-medium text-center text-red-700 border border-red-700 rounded-lg hover:text-white hover:bg-red-800 focus:outline-none dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600">
                             <BiTrashAlt/>
                             <span>Remove</span>
-                          </button>:''
-                          }
+                          </button>
                           {next ? 
                           <button type="button" onClick={()=> UpdateTodosStatus(item._id , next)} className="flex items-center p-1 text-sm font-medium text-center text-green-700 border border-green-700 rounded-lg hover:text-white hover:bg-green-800 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 focus:outline-none">
                             <span>Next</span>
