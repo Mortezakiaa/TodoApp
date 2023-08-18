@@ -22,11 +22,12 @@ function Nav() {
                 <div className="flex content-center justify-between w-full pt-2 md:w-1/3 md:justify-end">
                     <ul className="flex items-center justify-between flex-1 list-reset md:flex-none">
                         <li className="flex-1 md:flex-none md:mr-3">
-                            <div className="relative inline-block">
-                            <button onClick={()=> signOut()} className="flex items-center gap-2 px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400">
-                                <IoMdLogOut/>
-                                <span>LogOut</span>
-                            </button>
+                            <div className="relative flex items-center gap-4">
+                                <p className='text-yellow-500'>{data?.user?.email}</p>
+                                <button onClick={()=> signOut()} className="flex items-center gap-2 px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400">
+                                    <IoMdLogOut/>
+                                    <span>LogOut</span>
+                                </button>
                             </div>
                         </li>
                     </ul>
