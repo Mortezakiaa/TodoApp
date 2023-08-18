@@ -19,10 +19,9 @@ function Page() {
     <div>
       <MainHeader headerText={'Todos'}/>
       <div className="flex flex-row flex-wrap flex-grow mt-2">
-        <TaskCard fetchTodos={fetchTodos} items={'Todo'} data={state?.Todo} next="InProgress"/>
-        <TaskCard fetchTodos={fetchTodos} items={'In Progress'} data={state?.InProgress} next="Review" back="Todo"/>
-        <TaskCard fetchTodos={fetchTodos} items={'Review'} data={state?.Review} next="Done" back="InProgress"/>
-        <TaskCard fetchTodos={fetchTodos} items={'Done'} data={state?.Done} back="Review"/>
+        <TaskCard fetchTodos={fetchTodos} items={'Daily Todos'} data={state?.DailyTodo} next="WeeklyTodo"/>
+        <TaskCard fetchTodos={fetchTodos} items={'Weekly Todos'} data={state?.WeeklyTodo} next="MonthlyTodo" back="DailyTodo"/>
+        <TaskCard fetchTodos={fetchTodos} items={'Monthly Todos'} data={state?.MonthlyTodo} back="WeeklyTodo"/>
       </div>
     </div>
   )
